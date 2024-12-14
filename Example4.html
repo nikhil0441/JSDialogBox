@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment</title>
+    <title>Printing Table</title>
 </head>
 <body>
     <script>
-        let number=prompt("enter a number");
-        isNaN(number)==true?(document.write(`${number} is not a number` )):number%2==0?document.write(`${number} is a even`):document.write(`${number} is odd`);
+        let num=Number(prompt("enter a number"));
+        let i=1;
+        document.write(`<h3>Table of ${num}</h3>`);
+        document.write(`<table border='2'>`);
+        while(i<=10){
+            (i%2===0)?(document.write(`<tr><td style="background-color:blue;"> ${num}*${i}=${num*i}</td></tr>`)):document.write(`<tr><td style="background-color:red;">${num}*${i}=${num*i}</td></tr>`);
+            i++;
+        }
+        document.write(`</table>`);
     </script>
 </body>
 </html>
