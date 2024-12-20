@@ -8,13 +8,21 @@
 </head>
 <body>
     <div id="box"></div>
-    <button onclick="">Red</button>
-    <button onclick="">Red</button>
-    <button onclick="">Red</button> 
+    <button onclick="red()">Red</button>
+    <button onclick="blue()">Blue</button>
+    <button onclick="green()">Green</button> 
     <script>
         let red=()=>{
             let box=document.querySelector("#box");
-            box.innerHTML="backgound.color"
+            box.style.background="red";
+        }
+        let blue=()=>{
+            let box=document.querySelector("#box");
+            box.style.background="blue";
+        }
+        let green=()=>{
+            let box=document.querySelector("#box");
+            box.style.background="green";
         }
     </script>
 </body>
