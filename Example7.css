@@ -1,0 +1,7 @@
+#box{
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 10px;
+}
