@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and Avarge</title>
+</head>
+<body>
+    <script>
+        function greetings(){
+            let m=arguments.length;
+            let sum=0,avg=0;
+            for(let x of arguments){
+                sum+=x;
+            }
+            avg=sum/m;
+            document.write(` Sum of ${sum} <br> average is ${avg.toFixed(2)}`);
+        }
+        greetings(10,20,30);
+    </script>
+</body>
+</html>
