@@ -11,15 +11,20 @@
          <img id="imageBox" src="/Task/pexels-mikebirdy-244206.jpg" alt="Cars" style="width: 100%; height: 100%; background-size: cover; border-radius: 10px;">
     </div>
     <div>
-        <img onclick="changeImage('/Task/pexels-christian-9-454702-1164778.jpg')" src="/Task/pexels-christian-9-454702-1164778.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
-         <img onclick="changeImage('/Task/pexels-pixabay-210019.jpg')" src="/Task/pexels-pixabay-210019.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
-         <img onclick="changeImage('/Task/pexels-albinberlin-919073.jpg')" src="/Task/pexels-albinberlin-919073.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
+        <img onmouseenter="changeImage('/Task/pexels-christian-9-454702-1164778.jpg')" onmouseleave="currentImage()" src="/Task/pexels-christian-9-454702-1164778.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
+         <img onmouseenter="changeImage('/Task/pexels-pixabay-210019.jpg')" onmouseleave="currentImage('/Task/pexels-mikebirdy-244206')" src="/Task/pexels-pixabay-210019.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
+         <img onmouseenter="changeImage('/Task/pexels-albinberlin-919073.jpg')" onmouseleave="currentImage('/Task/pexels-mikebirdy-244206')" src="/Task/pexels-albinberlin-919073.jpg" alt="" style="width:80px; height: 50px; border-radius: 10px;">
     </div>
     <script>
       let changeImage=(src)=>{
         let bx=document.querySelector("#imageBox");
         bx.src=src;
-        bx.alt="hello";
+        // bx.alt="hello";
+      }
+
+      let currentImage=()=>{
+    let bx=document.querySelector("#imageBox");
+    bx.src="";
       }
     </script>
 </body>
