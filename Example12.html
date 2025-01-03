@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showAge()">Click</button>
+    <h1 id="text"></h1>
+    <script>
+      
+      let showAge=()=>{
+           let year=Number(prompt("Enter Your Birth Year"));
+           let currYear=new Date();
+           currYear=currYear.getFullYear();
+           let ans=document.querySelector("#text");
+        //    console.log(currYear);
+        if(year<=2025){
+          ans.innerHTML=(` Your CurrentAge is ${currYear-year} Year Old`);
+        }
+        else{
+            alert("enter valid Year");
+        }
+      }
+    </script>
+</body>
+</html>
