@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Example14.css">
-    <title>Document</title>
+    <title>Typed.js Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #offers {
+            margin: 0 auto;
+        }
+        h1, p {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="roll()">Roll</button>
+    <div id="offers">
+        <h1 id="typed-header"></h1>
+        <p id="typed-description"></p>
+    </div>
+    <script>
+        // Typed.js for the header
+        var typedHeader = new Typed('#typed-header', {
+            strings: ['Save up to 55% on your next hotel stay'], // Text to type
+            typeSpeed: 50, // Typing speed in milliseconds
+            backSpeed: 30, // Backspacing speed
+            backDelay: 2000, // Delay before backspacing
+            loop: false // Animation won't loop
+        });
 
-    <div id="box1">
-        <div></div>
-</div>
-<div id="box2">
-    <div></div>
-    <div></div>
-</div>
-<div id="box3">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<div id="box4">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<div id="box5">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<div id="box6">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<script src="Example14.js"></script>
+        // Typed.js for the description
+        var typedDescription = new Typed('#typed-description', {
+            strings: ['We compare hotel prices from over 100 sites'], // Text to type
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: false
+        });
+    </script>
 </body>
 </html>
