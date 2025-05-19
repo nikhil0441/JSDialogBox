@@ -3,45 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typed.js Demo</title>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Hotel Deals with Swiper.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            margin: 0;
+            padding: 0;
         }
-        #offers {
+
+        #card-heading {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .swiper {
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        h1, p {
-            color: #333;
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0 5px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .deal-btn {
+            background: #ff5a5f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .deal-btn:hover {
+            background: #e14e56;
         }
     </style>
 </head>
 <body>
-    <div id="offers">
-        <h1 id="typed-header"></h1>
-        <p id="typed-description"></p>
-    </div>
-    <script>
-        // Typed.js for the header
-        var typedHeader = new Typed('#typed-header', {
-            strings: ['Save up to 55% on your next hotel stay'], // Text to type
-            typeSpeed: 50, // Typing speed in milliseconds
-            backSpeed: 30, // Backspacing speed
-            backDelay: 3000, // Delay before backspacing
-            loop: false // Animation won't loop
-        });
 
-        // Typed.js for the description
-        var typedDescription = new Typed('#typed-description', {
-            strings: ['We compare hotel prices from over 100 sites'], // Text to type
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: false
+    <div id="card-heading">
+        <h1>Hot hotel deals right now</h1>
+        <!-- Swiper Container -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="/images/pexels-binyaminmellish-106399.jpg" alt="Acron Candolim Regina" class="card-image">
+                        <h3>Acron Candolim Regina</h3>
+                        <p class="rating">8.2 - Very good (6512)</p>
+                        <p>Goa, India</p>
+                        <p class="discount">26% Less than usual</p>
+                        <p class="price">₹4,367 per night</p>
+                        <p class="dates">19 Feb - 22 Feb</p>
+                        <button class="deal-btn">Check deal</button>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="/images/pexels-binyaminmellish-1396122.jpg" alt="Anandha Inn" class="card-image">
+                        <h3>Anandha Inn Convention Center</h3>
+                        <p class="rating">7.8 - Good (10104)</p>
+                        <p>Pondicherry, India</p>
+                        <p class="discount">23% Less than usual</p>
+                        <p class="price">₹3,919 per night</p>
+                        <p class="dates">11 Mar - 12 Mar</p>
+                        <button class="deal-btn">Check deal</button>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="/images/pexels-binyaminmellish-186077.jpg" alt="Reethi Faru" class="card-image">
+                        <h3>Reethi Faru, Bio Luxury Resort</h3>
+                        <p class="rating">9.2 - Excellent (1897)</p>
+                        <p>Maldives</p>
+                        <p class="discount">33% Less than usual</p>
+                        <p class="price">₹34,500 per night</p>
+                        <p class="dates">17 Feb - 19 Feb</p>
+                        <button class="deal-btn">Check deal</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 40 },
+            },
         });
     </script>
+
 </body>
 </html>
